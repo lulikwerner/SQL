@@ -1,5 +1,5 @@
 USE Billionaires_LW;
-
+DROP FUNCTION  f_top_ten;
 ###############################################################################
 			-- CREO LA PRIMERA FUNCION
 ###############################################################################
@@ -38,8 +38,17 @@ BEGIN
   SET exist_in_top_ten = (
         SELECT COUNT(*)
         FROM billionaires b
-        WHERE b.firstName = first_name AND b.lastName = last_name AND b.id <= 10
-    );
+        WHERE b.firstName = first_name AND b.lastName = last_name 
+	AND b.finalWorth >= (
+            SELECT MIN(finalWorth)
+            FROM (
+                SELECT finalWorth
+                FROM billionaires
+                ORDER BY finalWorth DESC
+                LIMIT 10
+            ) AS top_10
+          )
+    ) > 0;
     RETURN exist_in_top_ten;
 END $$ 
 DELIMITER 
@@ -47,3 +56,4 @@ DELIMITER
 -- LE PASO PARAMETROS PARA TESTEAR LA FUNCION
 SElECT f_top_ten('MICHAEL','DELL');
 SElECT f_top_ten('ELON','MUSK');
+SElECT f_top_ten('LUIS','MUSK');
