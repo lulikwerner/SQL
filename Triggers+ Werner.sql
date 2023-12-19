@@ -1,6 +1,6 @@
 USE Billionaires_LW;
-DROP TRIGGER  tr_before_update_comments;
-DROP TABLE new_location;
+DROP TRIGGER  tr_after_creation_location;
+DROP TABLE updated_location;
 
 ######################################################################################
 			-- CREO LOS PRIMEROS DOS TRIGGERS PARA LA TABLA  BILLIONAIRES
@@ -29,10 +29,9 @@ CREATE TABLE IF NOT EXISTS updated_fields(
 	selfMade tinyint(1),
 	finalWorth INT,
 	commentary VARCHAR(100),
-	fecha_hora DATETIME,
-	usuario VARCHAR(60)
+	date_time DATETIME,
+	user VARCHAR(60)
 );
-
 
 
 -- CREO EL TRIGGER DONDE VOY A INSERTAR LOS VALORES VIEJOS DE LA TABLA BILLIONAIRES, UN COMENTARIO, 
@@ -78,40 +77,14 @@ SELECT * FROM billionaires;
 
 
 /*SEGUNDO TRIGGER RELACIONADO A LOS INSERT DE LA TABLA BILLIONAIRES */
--- PRIMERO CREO LA TABLA  DONDE VOY A GUARDAR LA INFORMACION QUE VOY A INSERTAR EN EL TRIGGER
-CREATE TABLE IF NOT EXISTS new_billionaire(
-	id INT PRIMARY KEY,
-	id_location INT DEFAULT NULL,
-	placement INT,
-	fullname VARCHAR(60),
-	firstName VARCHAR(30),
-	lastName VARCHAR(30),
-	gender VARCHAR(25),
-	age INT,
-	DOB DATE,
-	birthYear INT,
-	birthMonth INT,
-	birthDay INT,
-	resCountry VARCHAR(50),
-	industry VARCHAR(45),
-	organization VARCHAR(45),
-	status enum('d','u'),
-	source VARCHAR(50),
-	selfMade tinyint(1),
-	finalWorth INT,
-	commentary VARCHAR(100),
-	fecha_hora DATETIME,
-	usuario VARCHAR(60)
-);
-
 
 -- CREO EL TRIGGER
 -- CREO EL TRIGGER DONDE VOY A INSERTAR LOS VALORES NUEVOS DE LA TABLA BILLIONAIRES, UN COMENTARIO, 
--- LA FECHA EN LA QUE FUE CREADO Y EL USUARIO QUE LO CREO
+-- LA FECHA EN LA QUE FUE CREADO Y EL USUARIO QUE LO CREO. VOY A AGUARDAR LA INFO EN LA TABLA UPDATED FIELDS
 CREATE TRIGGER tr_after_creation_comments
 AFTER INSERT ON billionaires
 FOR EACH ROW
-INSERT INTO new_billionaire VALUES 
+INSERT INTO updated_fields VALUES 
 	(NEW.id,
 	NEW.id_location,
 	NEW.placement,
@@ -184,17 +157,18 @@ INSERT INTO billionaires (
 
 -- SELECCIONO LAS TABLAS  PARA VER SI SE INSERTARON LOS DATOS
 SELECT * FROM billionaires;
-SELECT * FROM new_billionaire;
+SELECT * FROM updated_fields;
 
 
 ######################################################################################
-			-- CREO LOS PRIMEROS DOS TRIGGERS PARA LA TABLA ECONOMICS
+			-- CREO LOS PRIMEROS DOS TRIGGERS PARA LA TABLA LOCATIONS
 #######################################################################################
 
 /*PRIMER TRIGGER RELACIONADO A LOS INGRESOS DE LA TABLA LOCATIONS */
 -- PRIMERO CREO LA TABLA  DONDE VOY A GUARDAR LA INFORMACION QUE VOY A INSERTAR EN EL TRIGGER
-CREATE TABLE IF NOT EXISTS new_location(
+CREATE TABLE IF NOT EXISTS updated_location(
 id INT AUTO_INCREMENT PRIMARY KEY,
+old_id INT,
 citiCountry VARCHAR(50),
 state VARCHAR(50),
 region VARCHAR(35),
@@ -211,8 +185,9 @@ usuario VARCHAR(60)
 CREATE TRIGGER tr_after_creation_location
 AFTER INSERT ON locations
 FOR EACH ROW
-INSERT INTO new_location  VALUES(
+INSERT INTO updated_location VALUES(
 	NEW.id,
+    NULL,
     NEW.citiCountry,
     NEW.state,
     NEW.region,
@@ -245,7 +220,7 @@ INSERT INTO locations(
 
 -- SELECCIONO LAS TABLAS  PARA VER SI SE INSERTARON LOS DATOS
 SELECT * FROM locations;
-SELECT * FROM new_location;
+SELECT * FROM updated_location;
 
 
 
