@@ -345,7 +345,7 @@ DELIMITER ;
 /*PRIMER TRIGGER RELACIONADO A LOS UPDATES DE LA TABLA BILLIONAIRES */
 -- PRIMERO CREO LA TABLA  DONDE VOY A GUARDAR LA INFORMACION QUE VOY A INSERTAR EN EL TRIGGER
 CREATE TABLE IF NOT EXISTS updated_fields(
-	id INT PRIMARY KEY,
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	id_location INT DEFAULT NULL,
 	placement INT,
 	fullname VARCHAR(60),
@@ -375,8 +375,29 @@ CREATE TABLE IF NOT EXISTS updated_fields(
 CREATE TRIGGER tr_before_update_comments
 BEFORE UPDATE ON billionaires
 FOR EACH ROW
-INSERT INTO updated_fields VALUES (
-	OLD.id,
+INSERT INTO updated_fields(
+    id_location,
+    placement,
+    fullname,
+    firstName,
+    lastName,
+    gender,
+    age,
+    DOB,
+    birthYear,
+    birthMonth,
+    birthDay,
+    resCountry,
+    industry,
+    organization,
+    status,
+    source,
+    selfMade,
+    finalWorth,
+    commentary,
+    date_time,
+    user
+)	VALUES (
 	OLD.id_location,
 	OLD.placement,
 	OLD.fullname,
@@ -402,7 +423,7 @@ INSERT INTO updated_fields VALUES (
 
 
 -- UPDATE LOS VALORES EN LA TABLA BILLIONAIRES
-UPDATE billionaires  SET age = 12 WHERE id=1;
+UPDATE billionaires  SET age = 12 WHERE id=30;
 
 
 -- SELECCIONO LAS TABLAS  PARA VER SI SE INSERTARON LOS DATOS
