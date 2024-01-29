@@ -1,0 +1,25 @@
+id_location,placement,fullname,firstName,lastName,gender,age,DOB,birthYear,birthMonth,birthDay,resCountry,industry,organization,status,source,selfMade,finalWorth
+5,2,Elon Musk,Elon,Musk,M,51.00,1971-06-28,1971.00,6.00,28.00,United States,Automotive,Tesla,d,"Tesla, SpaceX",1.00,180000.00
+11,3,Jeff Bezos,Jeff,Bezos,M,59.00,1964-01-12,1964.00,1.00,12.00,United States,Technology,Amazon,d,Amazon,1.00,114000.00
+9,4,Larry Ellison,Larry,Ellison,M,78.00,1944-08-17,1944.00,8.00,17.00,United States,Technology,Oracle,u,Oracle,1.00,107000.00
+15,5,Warren Buffett,Warren,Buffett,M,92.00,1930-08-30,1930.00,8.00,30.00,United States,Finance & Investments,Berkshire Hathaway Inc (ClA),d,Berkshire Hathaway,1.00,106000.00
+11,6,Bill Gates,Bill,Gates,M,67.00,1955-10-28,1955.00,10.00,28.00,United States,Technology,Bill & Melinda Gates Foundation,d,Microsoft,1.00,104000.00
+14,7,Michael Bloomberg,Michael,Bloomberg,M,81.00,1942-02-14,1942.00,2.00,14.00,United States,Media & Entertainment,Bloomberg,u,Bloomberg LP,1.00,94500.00
+12,8,Carlos Slim Helu & family,Carlos,Slim Helu,M,83.00,1940-01-28,1940.00,1.00,28.00,Mexico,Telecom,America Movil,u,Telecom,1.00,93000.00
+13,9,Mukesh Ambani,Mukesh,Ambani,M,65.00,1957-04-19,1957.00,4.00,19.00,India,Diversified,Reliance Industries,d,Diversified,0.00,83400.00
+7,10,Steve Ballmer,Steve,Ballmer,M,67.00,1956-03-24,1956.00,3.00,24.00,United States,Technology,Los Angeles Clippers,d,Microsoft,1.00,80700.00
+17,11,Francoise Bettencourt Meyers & family,Francoise,Bettencourt Meyers,F,69.00,1953-07-10,1953.00,7.00,10.00,France,Fashion & Retail,,u,LOreal,0.00,80500.00
+16,12,Larry Page,Larry,Page,M,50.00,1973-03-26,1973.00,3.00,26.00,United States,Technology,Alphabet,d,Google,1.00,79200.00
+8,13,Amancio Ortega,Amancio,Ortega,M,87.00,1936-03-28,1936.00,3.00,28.00,Spain,Fashion & Retail,,u,Zara,1.00,77300.00
+10,14,Sergey Brin,Sergey,Brin,M,49.00,1973-08-21,1973.00,8.00,21.00,United States,Technology,Alphabet,d,Google,1.00,76000.00
+3,15,Zhong Shanshan,Shanshan,Zhong,M,68.00,1954-12-01,1954.00,12.00,1.00,China,Food & Beverage,,u,"Beverages, pharmaceuticals",1.00,68000.00
+16,16,Mark Zuckerberg,Mark,Zuckerberg,M,38.00,1984-05-14,1984.00,5.00,14.00,United States,Technology,Meta Platforms,d,Facebook,1.00,64400.00
+19,17,Charles Koch & family,Charles,Koch,M,87.00,1935-11-01,1935.00,11.00,1.00,United States,Diversified,Koch Industries,d,Koch Industries,0.00,59000.00
+14,17,Julia Koch & family,Julia,Koch,F,60.00,1962-04-12,1962.00,4.00,12.00,United States,Diversified,,d,Koch Industries,0.00,59000.00
+4,19,Jim Walton,Jim,Walton,M,74.00,1948-06-07,1948.00,6.00,7.00,United States,Fashion & Retail,Arvest Bank Group,d,Walmart,0.00,58800.00
+4,20,Rob Walton & family,Rob,Walton,M,78.00,1944-10-27,1944.00,10.00,27.00,United States,Fashion & Retail,Walmart,d,Walmart,0.00,57600.00
+2,21,Alice Walton,Alice,Walton,F,73.00,1949-10-07,1949.00,10.00,7.00,United States,Fashion & Retail,Crystal Bridges Museum of American Art,d,Walmart,0.00,56700.00
+18,22,David Thomson & family,David,Thomson,M,65.00,1957-06-12,1957.00,6.00,12.00,Canada,Media & Entertainment,Thomson Reuters Corporation,u,Media,0.00,54400.00
+5,23,Michael Dell,Michael,Dell,M,58.00,1965-02-23,1965.00,2.00,23.00,United States,Technology,Dell Inc,d,Dell Technologies,1.00,50100.00
+1,24,Gautam Adani,Gautam,Adani,M,60.00,1962-06-24,1962.00,6.00,24.00,India,Diversified,,d,"Infrastructure, commodities",1.00,47200.00
+6,25,Phil Knight & family,Phil,Knight,M,85.00,1938-02-24,1938.00,2.00,24.00,United States,Fashion & Retail,Nike,D,Nike,1.00,45100.00
