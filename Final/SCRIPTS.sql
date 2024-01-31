@@ -254,7 +254,7 @@ SElECT f_top_ten('ELON','MUSK');
 SElECT f_top_ten('LUIS','MUSK');
 
 ###################################################################################
-					-- CREO LAS STORES PROCEDURE
+					-- CREO LOS STORES PROCEDURE
 ###################################################################################
 
 /*CREO EL PRIMER STORED PROCEDURE. DONDE ORDENO POR ASC O DESC*/
